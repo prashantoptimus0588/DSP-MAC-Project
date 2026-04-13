@@ -1,0 +1,17 @@
+# 1. Install dependencies
+pip install soundfile numpy matplotlib
+
+# 2. Prepare audio (converts FLAC → hex)
+python Python/step1_prepare_audio.py
+
+# 3. Generate Python golden reference output
+python Python/step2_golden_model.py
+
+# 4. Compile Verilog
+python Python/run_sim.py
+
+# 5. Verify hardware vs Python (should print ✅ BIT-EXACT MATCH)
+python Python/step3_verify.py
+
+# 6. Convert filtered output to playable WAV
+python Python/hexToAudio.py
