@@ -77,7 +77,7 @@ fig.suptitle(
 )
 
 # --- Plot 1: Time domain — first 500 samples for clarity ---
-VIEW = min(N, 500)
+VIEW = min(N, 256)
 t = np.arange(VIEW) / SAMPLE_RATE * 1000  # ms
 
 axes[0].plot(t, inp[:VIEW], color='steelblue', linewidth=0.9, label='Original Input', alpha=0.9)
